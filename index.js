@@ -73,7 +73,7 @@ module.exports = function (options) {
         });
     }
 
-    var paths = [options.path];
+    var paths = options.path;
 
     options.exclude.push(options.mainFile);
 
