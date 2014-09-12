@@ -17,7 +17,7 @@ module.exports = function (options) {
         return through.obj(function (file, enc, cb) {
 
             var contents = file.contents.toString();
-            var re = new RegExp(/.module\(\'([a-zA-Z0-9_.]*)/);
+            var re = new RegExp(/.module\(\'([a-zA-Z0-9_.-]*)/);
             var matches = contents.match(re);
 
             list.push(matches[1]);
@@ -80,6 +80,7 @@ module.exports = function (options) {
     _.each(options.exclude, function(item) {
         paths.push("!" + item);
     });
+
 
     vfs.src(paths).pipe(getModuleNames());
 };
