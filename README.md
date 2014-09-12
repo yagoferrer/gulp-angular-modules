@@ -1,9 +1,9 @@
 ng-autoinject
 =============
 
-How to use it
+## Usage
 
-```
+```javascript
 require("ng-autoinject")({
     starttag: "/* modules-init */",
     endtag: "/* modules-end */",
@@ -12,4 +12,4 @@ require("ng-autoinject")({
     exclude: ["app/src/_templates/*"],
     modules: ['ui.router']
 });
-````
+```
