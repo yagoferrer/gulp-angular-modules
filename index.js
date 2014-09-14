@@ -20,69 +20,50 @@ module.exports = function (options) {
             var re = new RegExp(/.module\(\'([a-zA-Z0-9_.-]*)/);
             var matches = contents.match(re);
 
-            list.push(matches[1]);
+            if (matches) {
+                list.push(matches[1]);
+            }
 
             cb();
         }, inject);
-    }
-
-    function escapeForRegExp(str) {
-        return str.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
-    }
-
-    function getReplacementText() {
-        var replacement = options.starttag + "\n";
-
-        list = list.concat(options.modules);
-
-        list.sort();
-
-        for (var item in list) {
-            replacement += "'" + list[item] + "',\n";
-        }
-
-        replacement += options.endtag;
-
-        return replacement;
-    }
-
-    function getTextToReplace(contents) {
-        var re = new RegExp('(' + escapeForRegExp(options.starttag) + ')(\\s*)(\\n|\\r|.)*?(' + escapeForRegExp(options.endtag) + ')', 'gi');
-
-        var matches = contents.match(re);
-
-        return matches[0];
     }
 
     function inject() {
 
         var fs = require('fs');
 
-        fs.readFile(options.mainFile, 'utf8', function (err, contents) {
+        list = list.concat(options.modules);
 
-            if (err) {
-                return console.log(err);
-            }
+        list.sort();
 
-            var result = contents.replace(getTextToReplace(contents), getReplacementText());
+        var result;
 
-            fs.writeFile(options.mainFile, result, 'utf8', function (err) {
-                if (err) return console.log(err);
-            });
+        result = "(function (ng) {";
+        result += "ng.module('"+ options.module.name +"', ['"+ list.join("','") +"']);";
+        result += "})(angular);";
 
+
+        fs.writeFile(options.module.path, result, 'utf8', function (err) {
+            if (err) return console.log(err);
         });
+
+
     }
 
-    var paths = options.path;
 
-    options.exclude.push(options.mainFile);
+    function getPaths()
+    {
+        var paths = options.path;
 
-    _.each(options.exclude, function(item) {
-        paths.push("!" + item);
-    });
+        _.each(options.exclude, function(item) {
+            paths.push("!" + item);
+        });
+
+        return paths;
+    }
 
 
-    vfs.src(paths).pipe(getModuleNames());
+    vfs.src(getPaths()).pipe(getModuleNames());
 };
 
 
