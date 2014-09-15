@@ -38,7 +38,7 @@ module.exports = function (options) {
 
         var result;
 
-        result = "'use strict'\n";
+        result = "'use strict';\n";
         result += "(function (ng) {\n";
         result += "ng.module('"+ options.module.name +"', ['"+ list.join("','") +"']);\n";
         result += "})(angular);";
