@@ -23,8 +23,7 @@
   },
   "homepage": "https://github.com/yagoferrer/ng-autoinject",
   "devDependencies": {
-    "lodash": "^2.4.1",
-    "through2": "^0.6.1",
-    "vinyl-fs": "^0.3.7"
+    "gulp-util": "^3.0.1",
+    "through2": "^0.6.1"
   }
 }

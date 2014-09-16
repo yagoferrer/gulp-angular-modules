@@ -1,38 +1,67 @@
-'use strict';
 
-var vfs = require('vinyl-fs');
 var through = require('through2');
-var _ = require('lodash');
 
+var gutil = require('gulp-util');
+var PluginError = gutil.PluginError;
+var File = gutil.File;
+var path = require("path");
 
-module.exports = function (options) {
+// consts
+const PLUGIN_NAME = 'ng-inject';
+
+function ngInject(fileName, options)
+{
+
+    var opts = options || {};
+
+    options.name = options.name | "ng-inject";
+
+    if (!fileName) {
+        throw new PluginError(PLUGIN_NAME, 'Missing Filename');
+    }
 
     var list = [];
 
-    options = options || {};
+    var resultFile = new File({
+        base: __dirname,
+        cwd: __dirname,
+        path: path.join(__dirname, fileName)
+    });
 
+    function getModuleNames(file, enc, cb){
 
-    function getModuleNames() {
-
-        return through.obj(function (file, enc, cb) {
-
-            var contents = file.contents.toString();
-            var re = new RegExp(/.module\(\'([a-zA-Z0-9_.-]*)/);
-            var matches = contents.match(re);
-
-            if (matches) {
-                list.push(matches[1]);
-            }
-
+        if (file.isNull()) {
+            // do nothing if no contents
             cb();
-        }, inject);
+            return false;
+        }
+
+        if (file.isStream()) {
+            // Support streams?
+            cb();
+            return false;
+        }
+
+        var contents = file.contents.toString();
+
+        var re = new RegExp(/\.module\((["'])([a-zA-Z0-9_.-]*)/);
+
+        var matches = contents.match(re);
+
+        if (matches) {
+            list.push(matches[2]);
+        }
+
+        cb();
+
     }
 
-    function inject() {
-
-        var fs = require('fs');
-
-        list = list.concat(options.modules);
+    function getContent()
+    {
+        if (options.modules)
+        {
+            list = list.concat(options.modules);
+        }
 
         list.sort();
 
@@ -40,32 +69,27 @@ module.exports = function (options) {
 
         result = "'use strict';\n";
         result += "(function (ng) {\n";
-        result += "ng.module('"+ options.module.name +"', ['"+ list.join("','") +"']);\n";
+        result += "ng.module('"+ options.name +"', ['"+ list.join("','") +"']);\n";
         result += "})(angular);";
 
-
-        fs.writeFile(options.module.path, result, 'utf8', function (err) {
-            if (err) return console.log(err);
-        });
-
-
+        return result;
     }
 
-
-    function getPaths()
+    function sendBack(cb)
     {
-        var paths = options.path;
 
-        _.each(options.exclude, function(item) {
-            paths.push("!" + item);
-        });
+        var content = getContent();
 
-        return paths;
+        resultFile.contents = new Buffer(content);
+
+        this.push(resultFile);
+
+        cb();
+
     }
 
-
-    vfs.src(getPaths()).pipe(getModuleNames());
-};
-
+    return through.obj(getModuleNames, sendBack);
+}
 
 
+module.exports = ngInject;

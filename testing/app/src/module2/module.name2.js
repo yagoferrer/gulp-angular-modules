@@ -1,0 +1,1 @@
+ ng.module("module.name2", []);
