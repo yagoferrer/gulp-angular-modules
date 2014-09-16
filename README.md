@@ -30,7 +30,7 @@ angular.module('app', ['ng-inject']);
 
 ```javascript
 
-gulp.task('autoinject', 'auto inject libs', function () {
+gulp.task('autoinject', function () {
 
     require("ng-inject")({
         module: {name: "ng-inject", path: "app/src/init/ng-inject.js"},
