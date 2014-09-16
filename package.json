@@ -19,9 +19,9 @@
   "author": "Yago Ferrer <yago.ferrer@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/yagoferrer/ng-autoinject/issues"
+    "url": "https://github.com/yagoferrer/ng-inject/issues"
   },
-  "homepage": "https://github.com/yagoferrer/ng-autoinject",
+  "homepage": "https://github.com/yagoferrer/ng-inject",
   "devDependencies": {
     "gulp-util": "^3.0.1",
     "through2": "^0.6.1"
