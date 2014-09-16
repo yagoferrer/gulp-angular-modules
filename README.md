@@ -5,6 +5,8 @@ I love using gulp-inject. It's a great task that can take care of dynamically in
 
 I wanted to do something similar: include all my modules as a depedency of my Angular.js application without having to enter the file by hand each time.
 
+So now, when I'm adding a new module, automatically adds the file into the index.html, includes the module as a dependency in my project and reloads the browser. How cool is that?
+
 ## Usage
 
 1) Setup your Angular.js project to only include one dependency: 'autoinject'
