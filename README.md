@@ -10,7 +10,13 @@ I wanted to do something similar: include all my modules as a depedency of my `A
 
 So now, when I'm adding a new module, automatically adds the file into the index.html, includes the module as a dependency in my project and reloads the browser. How cool is that?
 
-## Usage
+
+##Install
+```
+npm install git://github.com/yagoferrer/ng-autoinject.git#master --save-dev
+```
+
+##Usage
 
 1) Setup your Angular.js project to only include one dependency: 'autoinject'
 ```javascript
