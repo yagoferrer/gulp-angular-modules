@@ -6,7 +6,7 @@ WORK IN PROGRESS
 
 I love using gulp-inject. It's a great task that can take care of dynamically including your JavaScript and bower files into your index.html file using for example gulp-watch and BrowserSync.
 
-I wanted to do something similar: include all my modules as a depedency of my Angular.js application without having to enter the file by hand each time.
+I wanted to do something similar: include all my modules as a depedency of my Angular.js application without having to enter the module name by hand each time.
 
 So now, when I'm adding a new module, automatically adds the file into the index.html, includes the module as a dependency in my project and reloads the browser. How cool is that?
 
