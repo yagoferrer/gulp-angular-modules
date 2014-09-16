@@ -14,7 +14,7 @@ function ngInject(fileName, options)
 
     var opts = options || {};
 
-    options.name = options.name | "ng-inject";
+    options.name = options.name || "ng-inject";
 
     if (!fileName) {
         throw new PluginError(PLUGIN_NAME, 'Missing Filename');
