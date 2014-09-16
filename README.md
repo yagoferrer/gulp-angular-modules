@@ -32,6 +32,8 @@ angular.module('app', ['ng-inject']);
 
 var gulp = require("gulp");
 
+var ngInject = require("ng-inject");
+
 gulp.task("default", function() {
 
     var options = {
