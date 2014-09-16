@@ -1,4 +1,4 @@
-ng-autoinject
+ng-inject
 =============
 
 I love using gulp-inject. It's a great task that can take care of dynamically including your JavaScript and bower files into your index.html file using for example gulp-watch and BrowserSync.
