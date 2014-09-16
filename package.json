@@ -4,7 +4,8 @@
   "description": "Add dependencies to your main Angular.js project file automatically",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jasmine-node spec/",
+    "pretest": "npm install"
   },
   "repository": {
     "type": "git",
@@ -25,5 +26,9 @@
   "dependencies": {
     "gulp-util": "^3.0.1",
     "through2": "^0.6.1"
+  },
+  "devDependencies": {
+    "jasmine-node": "^1.14.5",
+    "vinyl": "^0.4.3"
   }
 }
