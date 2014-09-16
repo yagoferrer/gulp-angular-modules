@@ -32,6 +32,8 @@ angular.module('app', ['ng-inject']);
 
 var gulp = require("gulp");
 
+var ngInject = require("ng-inject");
+
 gulp.task("default", function() {
 
     var options = {
@@ -39,7 +41,7 @@ gulp.task("default", function() {
         modules: ['ui.router']
     };
 
-    return gulp.src('app/src/**/*.js')
+    return gulp.src(["!app/src/templates/*", "app/src/**/*.js"])
         .pipe(ngInject("ng-inject.js", options))
         .pipe(gulp.dest("app/src/init/"))
 });
