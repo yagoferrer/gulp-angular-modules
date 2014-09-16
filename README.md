@@ -1,6 +1,10 @@
 ng-autoinject
 =============
 
+I love using gulp-inject. It's a great task that can take care of dynamically including your JavaScript and bower files into your index.html file using for example gulp-watch and BrowserSync.
+
+I wanted to do something similar: include all my modules as a depedency of my Angular.js application without having to enter the file by hand each time.
+
 ## Usage
 
 1) Setup your Angular.js project to only include one dependency: 'autoinject'
