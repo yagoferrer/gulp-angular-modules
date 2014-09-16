@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yagoferrer/ng-autoinject.git"
+    "url": "https://github.com/yagoferrer/ng-inject.git"
   },
   "keywords": [
     "angular.js",
