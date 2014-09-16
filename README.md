@@ -30,16 +30,19 @@ angular.module('app', ['ng-inject']);
 
 ```javascript
 
-gulp.task('autoinject', function () {
+var gulp = require("gulp");
 
-    require("ng-inject")({
-        module: {name: "ng-inject", path: "app/src/init/ng-inject.js"},
-        path: ["app/src/**/*.js"],
-        exclude: ["app/src/_templates/*"],
+gulp.task("default", function() {
+
+    var options = {
+        name: "ng-inject",
         modules: ['ui.router']
-    });
+    };
 
-}
+    return gulp.src('app/src/**/*.js')
+        .pipe(ngInject("ng-inject.js", options))
+        .pipe(gulp.dest("app/src/init/"))
+});
 ```
 
 3) Make sure that the module path it's added to your index.html
