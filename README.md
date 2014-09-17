@@ -1,4 +1,4 @@
-# gulp-ng-inject [![Build Status](https://travis-ci.org/yagoferrer/gulp-ng-inject.svg?branch=master)](https://travis-ci.org/yagoferrer/gulp-ng-inject) [![NPM version][npm-image]][npm-url]
+# gulp-ng-inject [![Build Status](https://travis-ci.org/yagoferrer/gulp-ng-inject.svg?branch=master)](https://travis-ci.org/yagoferrer/gulp-ng-inject) [![NPM version][https://badge.fury.io/js/gulp-ng-inject.svg]][https://npmjs.org/package/ng-gulp-inject]
 
 I love using [gulp-inject](https://github.com/klei/gulp-inject). It's a great tool that can take care of including your JavaScript and [bower](https://github.com/bower/bower) files into your `index.html` file. 
 
