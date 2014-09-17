@@ -76,8 +76,8 @@ List of additional modules to include.
 
 ###### Example
 
-In this example I use gulp-watch in combination with gulp-inject and gulp-ng-inject
-to automatically inject module dependencies in the index.html and to create the ng-inject.js file
+In this example I use [gulp-watch](https://github.com/floatdrop/gulp-watch) in combination with [gulp-inject](https://github.com/klei/gulp-inject) and `gulp-ng-inject`
+to automatically inject module dependencies in the `index.html` and to create the `ng-inject.js` file
 with all the module depedencies.
 
 This is how the generated ng-inject.js will look like:
