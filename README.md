@@ -1,4 +1,4 @@
-# ng-inject
+# ng-inject [![Build Status](https://travis-ci.org/yagoferrer/ng-inject.svg?branch=master)](https://travis-ci.org/yagoferrer/ng-inject)
 
 WORK IN PROGRESS
 
