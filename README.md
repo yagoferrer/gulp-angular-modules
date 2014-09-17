@@ -78,4 +78,35 @@ List of additional modules to include.
 
 ```js
 
+var jsFiles = 'app/src/js/**/*.js';
+var baseDir = './app/src';
+
+var browserSync = require('browser-sync');
+var gulp = require('gulp');
+var gulpInect = require('gulp-inject');
+
+gulp.task('server', function() {
+
+        browserSync({
+            server: {
+                baseDir: baseDir,
+            },
+            port: '3030'
+
+        });
+
+});
+
+gulp.task('watch', function () {
+    return gulp.watch([jsFiles], browserSync.reload);
+});
+
+
+gulp.task('js', function () {
+
+    return gulp.src('app/src/index.html')
+        .pipe(gulpInect(gulp.src([jsFiles], {base: baseDir, read: false}), {relative: true}))
+        .pipe(gulp.dest('./app/src'));
+});
+
 ```
