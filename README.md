@@ -17,6 +17,7 @@ npm install ng-inject --save-dev
 1) This is the only depedency you'll need into your `Angular.js` project: 'ng-inject'
 ```javascript
 // app/src/main.js
+
 angular.module('app', ['ng-inject']);
 ```
 
@@ -25,6 +26,8 @@ angular.module('app', ['ng-inject']);
 
 
 ```javascript
+
+// gulpfile.js
 
 var gulp = require("gulp");
 var ngInject = require("ng-inject");
