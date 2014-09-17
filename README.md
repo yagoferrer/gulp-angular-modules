@@ -1,5 +1,4 @@
-ng-inject
-=============
+# ng-inject [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][depstat-image]][depstat-url]
 
 WORK IN PROGRESS
 
