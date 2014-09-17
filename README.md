@@ -89,6 +89,8 @@ ng.module('ng-inject', ['module.name','another.module','ui.router']);
 })(angular);
 ```
 
+Your gulpfile.js
+
 ```js
 var gulp = require('gulp');
 var watch = require('gulp-watch');
