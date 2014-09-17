@@ -1,12 +1,8 @@
 # ng-inject [![Build Status](https://travis-ci.org/yagoferrer/ng-inject.svg?branch=master)](https://travis-ci.org/yagoferrer/ng-inject)
 
-I love using [gulp-inject](https://github.com/klei/gulp-inject). It's a great tool that can take care of dynamically including your JavaScript and [bower](https://github.com/bower/bower) files into your `index.html` file using for example [gulp-watch](https://github.com/floatdrop/gulp-watch) and [BrowserSync](https://github.com/shakyShane/browser-sync).
+I love using [gulp-inject](https://github.com/klei/gulp-inject). It's a great tool that can take care of including your JavaScript and [bower](https://github.com/bower/bower) files into your `index.html` file. You can also live reload your changes using for example [gulp-watch](https://github.com/floatdrop/gulp-watch) and [BrowserSync](https://github.com/shakyShane/browser-sync).
 
 When working with `Angular.js`, I also wanted to include all my modules names as a depedency of my application automatically. So that I don't have to include each module name by hand. `ng-inject` does that for you. 
-
-When I'm writing a new Angular module, gulp: automatically adds the file into the `index.html`, includes the module name as a dependency in my project and reloads the browser so that I can see it working.
-
-How cool is that?
 
 
 ##Install
