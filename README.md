@@ -30,7 +30,6 @@ angular.module('app', ['ng-inject']);
 ```javascript
 
 var gulp = require("gulp");
-
 var ngInject = require("ng-inject");
 
 gulp.task("default", function() {
