@@ -30,13 +30,12 @@ angular.module('app', ['ng-inject']);
 ```javascript
 
 var gulp = require("gulp");
-
 var ngInject = require("ng-inject");
 
 gulp.task("default", function() {
 
     var options = {
-        name: "ng-inject", // The name of the module to use in your main Angular.js file.
+        name: "ng-inject", // The name of the module to use in your main Angular.js
         modules: ['ui.router'] // Any extra modules that you want to include.
     };
 
