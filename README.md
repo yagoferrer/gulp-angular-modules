@@ -77,47 +77,48 @@ List of additional modules to include.
 ###### Example
 
 ```js
-
-var jsFiles = 'app/src/js/**/*.js';
-var baseDir = './app/src';
-
 var browserSync = require('browser-sync');
 var gulp = require('gulp');
-var gulpInject = require('gulp-inject');
+var inject = require('gulp-inject');
 var ngInject = require('ng-inject');
+var watch = require('gulp-watch');
+
+var config = {
+    baseDir: './app/src',
+    jsFiles: './app/src/js/**/*.js',
+    port: 3030
+}
 
 gulp.task('ngInject', function() {
-
-    var options = {
-        name: "ng-inject", // The name of the module to use in your main Angular.js
-        modules: ['ui.router'] // Any extra modules that you want to include.
-    };
-
-    return gulp.src(["!app/src/templates/*", "app/src/**/*.js"])
-        .pipe(ngInject("ng-inject.js", options)) // Name of the file generated
-        .pipe(gulp.dest("app/src/init/")) // Destination folder
+    return gulp.src([config.jsFiles])
+        .pipe(ngInject("ng-inject.js", {name: "ng-inject", modules: ['ui.router']}))
+        .pipe(gulp.dest("app/src/init"));
 });
 
 gulp.task('server', function() {
-        browserSync({
-            server: {
-                baseDir: baseDir,
-            },
-            port: '3030'
+    browserSync({
+        server: {
+            baseDir: config.baseDir
+        },
+        port: config.port
 
-        });
+    });
 });
 
 gulp.task('watch', function () {
-    gulp.watch([jsFiles], browserSync.reload);
-    gulp.watch([jsFiles], ['js']);
+    watch(config.jsFiles, function() {
+        browserSync.reload();
+        gulp.start('js');
+    });
 });
 
 
 gulp.task('js', ['ngInject'], function () {
-    return gulp.src('app/src/index.html')
-        .pipe(gulpInect(gulp.src([jsFiles], {base: baseDir, read: false}), {relative: true}))
-        .pipe(gulp.dest('./app/src'));
+
+    return gulp.src(config.baseDir + '/index.html')
+        .pipe(inject(gulp.src([config.jsFiles], {base: config.baseDir, read: true}), {relative: true}))
+        .pipe(gulp.dest(config.baseDir));
 });
 
+gulp.task('default', ['js', 'watch', 'server']);
 ```
