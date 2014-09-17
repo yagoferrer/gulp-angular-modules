@@ -128,20 +128,16 @@ gulp.task('js', ['ngInject'], function () {
 gulp.task('default', ['js', 'watch', 'server']);
 ```
 
-###### HTML with Inject tags.
+###### Add inject tags in the index.html.
 
 ```html
 <html>
 <head>
 </head>
 <body>
-
 <script src="../../bower_components/angular/angular.js"></script>
-
 <!-- inject:js -->
 <!-- endinject -->
-
-
 </body>
 </html>
 ```
