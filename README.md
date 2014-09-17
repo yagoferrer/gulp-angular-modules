@@ -83,10 +83,22 @@ var baseDir = './app/src';
 
 var browserSync = require('browser-sync');
 var gulp = require('gulp');
-var gulpInect = require('gulp-inject');
+var gulpInject = require('gulp-inject');
+var ngInject = require('ng-inject');
+
+gulp.task('ngInject', function() {
+
+    var options = {
+        name: "ng-inject", // The name of the module to use in your main Angular.js
+        modules: ['ui.router'] // Any extra modules that you want to include.
+    };
+
+    return gulp.src(["!app/src/templates/*", "app/src/**/*.js"])
+        .pipe(ngInject("ng-inject.js", options)) // Name of the file generated
+        .pipe(gulp.dest("app/src/init/")) // Destination folder
+});
 
 gulp.task('server', function() {
-
         browserSync({
             server: {
                 baseDir: baseDir,
@@ -94,16 +106,15 @@ gulp.task('server', function() {
             port: '3030'
 
         });
-
 });
 
 gulp.task('watch', function () {
-    return gulp.watch([jsFiles], browserSync.reload);
+    gulp.watch([jsFiles], browserSync.reload);
+    gulp.watch([jsFiles], ['js']);
 });
 
 
-gulp.task('js', function () {
-
+gulp.task('js', ['ngInject'], function () {
     return gulp.src('app/src/index.html')
         .pipe(gulpInect(gulp.src([jsFiles], {base: baseDir, read: false}), {relative: true}))
         .pipe(gulp.dest('./app/src'));
