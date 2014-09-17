@@ -4,7 +4,9 @@ I love using [gulp-inject](https://github.com/klei/gulp-inject). It's a great ta
 
 When I discoverted this, I also wanted to include all my long list of Angular modules as a depedency of my `Angular.js` application automatically. That's where `ng-inject` comes handy. 
 
-When I'm writing a new Angular module, gulp: automatically adds the file into the `index.html`, includes the module name as a dependency in my project and reloads the browser so that I can see it working. How cool is that?
+When I'm writing a new Angular module, gulp: automatically adds the file into the `index.html`, includes the module name as a dependency in my project and reloads the browser so that I can see it working.
+
+How cool is that?
 
 
 ##Install
