@@ -77,15 +77,16 @@ List of additional modules to include.
 ###### Example
 
 ```js
-var browserSync = require('browser-sync');
 var gulp = require('gulp');
-var inject = require('gulp-inject');
-var ngInject = require('gulp-ng-inject');
 var watch = require('gulp-watch');
+var inject = require('gulp-inject');
+var ngInject = require('ng-inject');
+var browserSync = require('browser-sync');
 
 var config = {
-    baseDir: './app/src',
-    jsFiles: './app/src/js/**/*.js',
+    baseDir:  'app/src',
+    jsFolder: 'app/src/js/**',
+    jsFiles:  'app/src/js/**/*.js',
     port: 3030
 }
 
@@ -97,26 +98,26 @@ gulp.task('ngInject', function() {
 
 gulp.task('server', function() {
     browserSync({
-        server: {
-            baseDir: config.baseDir
-        },
+        server: {baseDir: config.baseDir},
         port: config.port
-
     });
 });
 
+// Make sure you listen for the entire directory: 'app/src/js/**'
+// So that when we add a new file or folder, watch will reload the browser.
 gulp.task('watch', function () {
-    watch(config.jsFiles, function() {
+    watch([config.jsFolder, config.jsFiles], function(e, cb) {
         browserSync.reload();
         gulp.start('js');
+        cb();
     });
 });
 
-
 gulp.task('js', ['ngInject'], function () {
+
     return gulp.src(config.baseDir + '/index.html')
-    .pipe(inject(gulp.src([config.jsFiles], {base: config.baseDir, read: true}), {relative: true}))
-    .pipe(gulp.dest(config.baseDir));
+        .pipe(inject(gulp.src([config.jsFiles], {base: config.baseDir, read: true}), {relative: true}))
+        .pipe(gulp.dest(config.baseDir));
 });
 
 gulp.task('default', ['js', 'watch', 'server']);
