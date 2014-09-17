@@ -49,3 +49,27 @@ gulp.task("default", function() {
 ```html
 <script src="app/src/init/ng-inject.js">
 ```
+
+## API
+
+### ngInject(fileName, options)
+
+#### fileName
+
+Type: `string`
+
+The destination fileName.
+
+#### options
+
+##### name
+
+Type: `string`
+
+The name of the module that you want to use.
+
+##### modules
+
+Type: `array`
+
+List of additional modules to include.
