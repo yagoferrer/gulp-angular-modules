@@ -80,16 +80,6 @@ In this example I use [gulp-watch](https://github.com/floatdrop/gulp-watch) in c
 to automatically inject module dependencies in the `index.html` and to create the `ng-inject.js` file
 with all the module depedencies.
 
-This is how the generated ng-inject.js will look like:
-
-```js
-'use strict';
-(function (ng) {
-ng.module('ng-inject', ['module.name','another.module','ui.router']);
-})(angular);
-```
-
-Your gulpfile.js
 
 ```js
 var gulp = require('gulp');
@@ -154,4 +144,13 @@ gulp.task('default', ['js', 'watch', 'server']);
 
 </body>
 </html>
+```
+
+This is how the generated ng-inject.js will look like after the `ngInject` runs
+
+```js
+'use strict';
+(function (ng) {
+ng.module('ng-inject', ['module.name','another.module','ui.router']);
+})(angular);
 ```
