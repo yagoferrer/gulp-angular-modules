@@ -37,8 +37,8 @@ var ngInject = require("ng-inject");
 gulp.task("default", function() {
 
     var options = {
-        name: "ng-inject",
-        modules: ['ui.router']
+        name: "ng-inject", // The name of the module to use in your main Angular.js file.
+        modules: ['ui.router'] // Any extra modules that you want to include.
     };
 
     return gulp.src(["!app/src/templates/*", "app/src/**/*.js"])
