@@ -114,11 +114,28 @@ gulp.task('watch', function () {
 
 
 gulp.task('js', ['ngInject'], function () {
-
     return gulp.src(config.baseDir + '/index.html')
-        .pipe(inject(gulp.src([config.jsFiles], {base: config.baseDir, read: true}), {relative: true}))
-        .pipe(gulp.dest(config.baseDir));
+    .pipe(inject(gulp.src([config.jsFiles], {base: config.baseDir, read: true}), {relative: true}))
+    .pipe(gulp.dest(config.baseDir));
 });
 
 gulp.task('default', ['js', 'watch', 'server']);
+```
+
+###### HTML with Inject tags.
+
+```html
+<html>
+<head>
+</head>
+<body>
+
+<script src="../../bower_components/angular/angular.js"></script>
+
+<!-- inject:js -->
+<!-- endinject -->
+
+
+</body>
+</html>
 ```
