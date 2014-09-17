@@ -73,3 +73,9 @@ The name of the module that you want to use.
 Type: `array`
 
 List of additional modules to include.
+
+###### Example
+
+```js
+
+```
