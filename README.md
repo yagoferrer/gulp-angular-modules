@@ -9,7 +9,7 @@ When I'm writing a new Angular module, gulp: automatically adds the file into th
 
 ##Install
 ```
-npm install git://github.com/yagoferrer/ng-autoinject.git#master --save-dev
+npm install ng-inject --save-dev
 ```
 
 ##Usage
