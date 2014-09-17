@@ -38,7 +38,7 @@ gulp.task("default", function() {
     };
 
     return gulp.src(["!app/src/templates/*", "app/src/**/*.js"])
-        .pipe(ngInject("ng-inject.js", options)) // Name of the file generated with all deps.
+        .pipe(ngInject("ng-inject.js", options)) // Name of the file generated
         .pipe(gulp.dest("app/src/init/")) // Destination folder
 });
 ```
