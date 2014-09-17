@@ -3,9 +3,7 @@ var ngInject = require('../');
 
 describe('when using ng-inject', function() {
 
-
     it("should return an Angular.js module with all the dependencies", function(done) {
-
 
         // create the fake file
 
@@ -23,7 +21,6 @@ describe('when using ng-inject', function() {
         // wait for the file to come back out
         myNgInject.on('data', function(file) {
 
-
             // make sure it came out the same way it went in
             expect(file.isBuffer()).toBeTruthy();
 
@@ -31,7 +28,6 @@ describe('when using ng-inject', function() {
             result += "(function (ng) {\n";
             result += "ng.module('ng-inject', ['module.name','module.name2']);\n";
             result += "})(angular);";
-
 
             expect(file.contents.toString('utf8')).toEqual(result);
 
@@ -44,8 +40,6 @@ describe('when using ng-inject', function() {
         myNgInject.write(fakeFile2);
         myNgInject.end();
 
-
     });
-
 
 });
