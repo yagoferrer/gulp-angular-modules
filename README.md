@@ -74,7 +74,7 @@ Type: `array`
 
 List of additional modules to include.
 
-###### Example
+###### Real world gulpfile.js example
 
 In this example I use [gulp-watch](https://github.com/floatdrop/gulp-watch) in combination with [gulp-inject](https://github.com/klei/gulp-inject) and `gulp-ng-inject`
 to automatically inject module dependencies in the `index.html` and to create the `ng-inject.js` file
