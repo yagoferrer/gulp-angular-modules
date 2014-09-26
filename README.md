@@ -2,7 +2,7 @@
 
 I love using [gulp-inject](https://github.com/klei/gulp-inject). It's a great tool that can take care of including your JavaScript and [bower](https://github.com/bower/bower) files into your `index.html` file. 
 
-When working with `Angular.js`, I also wanted to include all my modules names as a depedency of my application automatically. So that I don't have to include each module name by hand. `gulp-ng-inject` does that for you. 
+When working with `Angular.js`, I also wanted to include all my modules names as a depedency of my app.js file automatically. I always forget to add them! So I created `gulp-ng-inject` to never have do that by hand again.
 
 You can also watch files & when they change it can reload the browser for you in combination with [gulp-watch](https://github.com/floatdrop/gulp-watch) and [BrowserSync](https://github.com/shakyShane/browser-sync).
 
