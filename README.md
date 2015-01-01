@@ -81,9 +81,9 @@ Type: `array`
 
 List of additional modules to include.
 
-Example
+## Example
 
-Check out the `example` directory
+Check out the: [example directory](example/gulpfile.js)
 
 
 This is how the generated ng-inject.js will look like after the `ngInject` runs
