@@ -13,8 +13,14 @@ You can also watch files & when they change it can reload the browser for you in
 
 It creates a main module into a file that requires all your modules as a dependency. All you need to do is to include that file into your index.html and the module name into your `Angular.js` depedencies.
 
+### Supports
+- Adding a new module
+- Renaming a module
+- Removing a module
+- 3rd party modules
 
-### Install
+
+### How to install
 ```
 npm install gulp-ng-inject --save-dev
 ```
@@ -83,7 +89,7 @@ List of additional modules to include.
 
 ## Example
 
-Check out the: [example directory](example/gulpfile.js)
+Check out the example directory: [gulpfile.js](example/gulpfile.js), [index.html](example/index.html)
 
 
 This is how the generated ng-inject.js will look like after the `ngInject` runs
