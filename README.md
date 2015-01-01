@@ -1,6 +1,6 @@
 ## gulp-ng-inject [![NPM version](https://badge.fury.io/js/gulp-ng-inject.svg)](https://npmjs.org/package/ng-gulp-inject) [![Build Status](https://travis-ci.org/yagoferrer/gulp-ng-inject.svg?branch=master)](https://travis-ci.org/yagoferrer/gulp-ng-inject) [![Dependency Status](https://david-dm.org/yagoferrer/gulp-ng-inject.svg)](https://david-dm.org/yagoferrer/gulp-ng-inject)
 
-This module helps you to detect when you are adding a new `Angular.js` module into your working directory and automatically attach and load the file into your project.
+This module helps you to detect when you are adding a new `Angular.js` module into your working directory to automatically load the file and include the module into your project.
 
 ### Inspiration
 I love using [gulp-inject](https://github.com/klei/gulp-inject). It's a great tool that can take care of including your JavaScript and [bower](https://github.com/bower/bower) files into your `index.html` file. 
