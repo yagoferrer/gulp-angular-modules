@@ -1,5 +1,9 @@
-# gulp-ng-inject [![NPM version](https://badge.fury.io/js/gulp-ng-inject.svg)](https://npmjs.org/package/ng-gulp-inject) [![Build Status](https://travis-ci.org/yagoferrer/gulp-ng-inject.svg?branch=master)](https://travis-ci.org/yagoferrer/gulp-ng-inject) [![Dependency Status](https://david-dm.org/yagoferrer/gulp-ng-inject.svg)](https://david-dm.org/yagoferrer/gulp-ng-inject)
+## gulp-ng-inject [![NPM version](https://badge.fury.io/js/gulp-ng-inject.svg)](https://npmjs.org/package/ng-gulp-inject) [![Build Status](https://travis-ci.org/yagoferrer/gulp-ng-inject.svg?branch=master)](https://travis-ci.org/yagoferrer/gulp-ng-inject) [![Dependency Status](https://david-dm.org/yagoferrer/gulp-ng-inject.svg)](https://david-dm.org/yagoferrer/gulp-ng-inject)
 
+#### About
+This module helps you to detect when you are adding a new `Angular.js` module into your working directory and automatically attach and load the file into your project.
+
+#### Inspiration
 I love using [gulp-inject](https://github.com/klei/gulp-inject). It's a great tool that can take care of including your JavaScript and [bower](https://github.com/bower/bower) files into your `index.html` file. 
 
 When working with `Angular.js`, I also wanted to include all my modules names as a depedency of my app.js file automatically. I always forget to add them! So I created `gulp-ng-inject` to never have do that this by hand again.
