@@ -1,6 +1,5 @@
 ## gulp-ng-inject [![NPM version](https://badge.fury.io/js/gulp-ng-inject.svg)](https://npmjs.org/package/ng-gulp-inject) [![Build Status](https://travis-ci.org/yagoferrer/gulp-ng-inject.svg?branch=master)](https://travis-ci.org/yagoferrer/gulp-ng-inject) [![Dependency Status](https://david-dm.org/yagoferrer/gulp-ng-inject.svg)](https://david-dm.org/yagoferrer/gulp-ng-inject)
 
-#### About
 This module helps you to detect when you are adding a new `Angular.js` module into your working directory and automatically attach and load the file into your project.
 
 #### Inspiration
@@ -11,12 +10,12 @@ When working with `Angular.js`, I also wanted to include all my modules names as
 You can also watch files & when they change it can reload the browser for you in combination with [gulp-watch](https://github.com/floatdrop/gulp-watch) and [BrowserSync](https://github.com/shakyShane/browser-sync).
 
 
-##Install
+### Install
 ```
 npm install gulp-ng-inject --save-dev
 ```
 
-##Usage
+### Usage
 
 1) This is the only depedency you'll need into your `Angular.js` project: 'gulp-ng-inject'
 ```javascript
@@ -54,25 +53,25 @@ gulp.task("default", function() {
 <script src="app/src/init/ng-inject.js">
 ```
 
-## API
+### API
 
-### ngInject(fileName, options)
+#### ngInject(fileName, options)
 
-#### fileName
+##### fileName
 
 Type: `string`
 
 The destination fileName.
 
-#### options
+##### options
 
-##### name
+###### name
 
 Type: `string`
 
 The name of the module that you want to use.
 
-##### modules
+###### modules
 
 Type: `array`
 
