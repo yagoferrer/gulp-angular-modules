@@ -57,31 +57,31 @@ gulp.task("default", function() {
 <script src="app/src/init/ng-inject.js">
 ```
 
-### API
+## API
 
-#### ngInject(fileName, options)
+### ngInject(fileName, options)
 
-##### fileName
+#### fileName
 
 Type: `string`
 
 The destination fileName.
 
-##### options
+#### options
 
-###### name
+##### name
 
 Type: `string`
 
 The name of the module that you want to use.
 
-###### modules
+##### modules
 
 Type: `array`
 
 List of additional modules to include.
 
-###### Real world gulpfile.js example
+##### Real world gulpfile.js example
 
 In this example I use [gulp-watch](https://github.com/floatdrop/gulp-watch) in combination with [gulp-inject](https://github.com/klei/gulp-inject) and `gulp-ng-inject`
 to automatically inject module dependencies in the `index.html` and to create the `ng-inject.js` file
@@ -135,7 +135,7 @@ gulp.task('js', ['ngInject'], function () {
 gulp.task('default', ['js', 'watch', 'server']);
 ```
 
-###### Add inject tags in the index.html.
+##### Add inject tags in the index.html.
 
 ```html
 <html>
