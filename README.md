@@ -2,12 +2,16 @@
 
 This module helps you to detect when you are adding a new `Angular.js` module into your working directory and automatically attach and load the file into your project.
 
-#### Inspiration
+### Inspiration
 I love using [gulp-inject](https://github.com/klei/gulp-inject). It's a great tool that can take care of including your JavaScript and [bower](https://github.com/bower/bower) files into your `index.html` file. 
 
 When working with `Angular.js`, I also wanted to include all my modules names as a depedency of my app.js file automatically. I always forget to add them! So I created `gulp-ng-inject` to never have do that this by hand again.
 
 You can also watch files & when they change it can reload the browser for you in combination with [gulp-watch](https://github.com/floatdrop/gulp-watch) and [BrowserSync](https://github.com/shakyShane/browser-sync).
+
+### How it works?
+
+It creates a main module into a file that requires all your modules as a dependency. All you need to do is to include that file into your index.html and the module name into your `Angular.js` depedencies.
 
 
 ### Install
