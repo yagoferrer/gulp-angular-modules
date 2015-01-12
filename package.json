@@ -4,7 +4,7 @@
   "description": "Detects when you are adding a new `Angular.js` module into your working directory to automatically load the file and include the module into your project",
   "main": "index.js",
   "scripts": {
-    "test": "jasmine-node spec/"
+    "test": "./node_modules/.bin/jasmine-node spec/"
   },
   "repository": {
     "type": "git",
