@@ -1,7 +1,7 @@
 var File = require('vinyl');
-var ngInject = require('../');
+var angularModules = require('../');
 
-describe('when using ng-inject', function() {
+describe('when using gulp-angular-modules', function() {
 
     it("should return an Angular.js module with all the dependencies", function(done) {
 
@@ -16,7 +16,7 @@ describe('when using ng-inject', function() {
         });
 
         // Create a plugin stream
-        var myNgInject = ngInject("ng-inject.js", {name: "ng-inject"});
+        var myNgInject = angularModules("gulp-angular-modules.js", {name: "gulp-angular-modules"});
 
         // wait for the file to come back out
         myNgInject.on('data', function(file) {
@@ -26,7 +26,7 @@ describe('when using ng-inject', function() {
 
             var result = "'use strict';\n";
             result += "(function (ng) {\n";
-            result += "ng.module('ng-inject', ['module.name','module.name2']);\n";
+            result += "ng.module('gulp-angular-modules', ['module.name','module.name2']);\n";
             result += "})(angular);";
 
             expect(file.contents.toString('utf8')).toEqual(result);

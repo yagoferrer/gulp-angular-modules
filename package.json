@@ -1,5 +1,5 @@
 {
-  "name": "gulp-ng-inject",
+  "name": "gulp-angular-modules",
   "version": "0.1.1",
   "description": "Detects when you are adding a new `Angular.js` module into your working directory to automatically load the file and include the module into your project",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yagoferrer/gulp-ng-inject.git"
+    "url": "https://github.com/yagoferrer/gulp-angular-modules.git"
   },
   "keywords": [
     "angular.js",
@@ -19,9 +19,9 @@
   "author": "Yago Ferrer <yago.ferrer@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/yagoferrer/gulp-ng-inject/issues"
+    "url": "https://github.com/yagoferrer/gulp-angular-modules/issues"
   },
-  "homepage": "https://github.com/yagoferrer/gulp-ng-inject",
+  "homepage": "https://github.com/yagoferrer/gulp-angular-modules",
   "dependencies": {
     "gulp-util": "^3.0.1",
     "through2": "^0.6.1"

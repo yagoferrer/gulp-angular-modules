@@ -7,14 +7,14 @@ var File = gutil.File;
 var path = require("path");
 
 // consts
-const PLUGIN_NAME = 'ng-inject';
+const PLUGIN_NAME = 'gulp-angular-modules';
 
-function ngInject(fileName, options)
+function angularModules(fileName, options)
 {
 
     var opts = options || {};
 
-    options.name = options.name || "ng-inject";
+    options.name = options.name || "gulp-angular-modules";
 
     if (!fileName) {
         throw new PluginError(PLUGIN_NAME, 'Missing Filename');
@@ -92,4 +92,4 @@ function ngInject(fileName, options)
 }
 
 
-module.exports = ngInject;
+module.exports = angularModules;

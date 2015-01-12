@@ -1,13 +1,13 @@
 /*
-In this example I use [gulp-watch](https://github.com/floatdrop/gulp-watch) in combination with [gulp-inject](https://github.com/klei/gulp-inject) and `gulp-ng-inject`
-to automatically inject module dependencies in the `index.html` and to create the `ng-inject.js` file
+In this example I use [gulp-watch](https://github.com/floatdrop/gulp-watch) in combination with [gulp-inject](https://github.com/klei/gulp-inject) and `gulp-angular-modules`
+to automatically inject module dependencies in the `index.html` and to create the `gulp-angular-modules.js` file
 with all the module depedencies.
 */
 
 var gulp = require('gulp');
 var watch = require('gulp-watch');
 var inject = require('gulp-inject');
-var ngInject = require('gulp-ng-inject');
+var angularModules = require('gulp-angular-modules');
 var browserSync = require('browser-sync');
 
 var config = {
@@ -17,9 +17,9 @@ var config = {
     port: 3030
 }
 
-gulp.task('ngInject', function() {
+gulp.task('angularModules', function() {
     return gulp.src([config.jsFiles])
-        .pipe(ngInject("ng-inject.js", {name: "ng-inject", modules: ['ui.router']}))
+        .pipe(angularModules("gulp-angular-modules.js", {name: "gulp-angular-modules", modules: ['ui.router']}))
         .pipe(gulp.dest("app/src/init"));
 });
 
@@ -40,7 +40,7 @@ gulp.task('watch', function () {
     });
 });
 
-gulp.task('js', ['ngInject'], function () {
+gulp.task('js', ['angularModules'], function () {
 
     return gulp.src(config.baseDir + '/index.html')
         .pipe(inject(gulp.src([config.jsFiles], {base: config.baseDir, read: true}), {relative: true}))
