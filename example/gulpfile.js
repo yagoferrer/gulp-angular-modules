@@ -1,7 +1,7 @@
 /*
 In this example I use [gulp-watch](https://github.com/floatdrop/gulp-watch) in combination with [gulp-inject](https://github.com/klei/gulp-inject) and `gulp-angular-modules`
 to automatically inject module dependencies in the `index.html` and to create the `gulp-angular-modules.js` file
-with all the module depedencies.
+with all the module dependencies.
 */
 
 var gulp = require('gulp');
