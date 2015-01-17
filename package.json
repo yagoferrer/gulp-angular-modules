@@ -1,6 +1,6 @@
 {
   "name": "gulp-angular-modules",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Detects when you are adding a new `Angular.js` module into your working directory to automatically load the file and include the module into your project",
   "main": "index.js",
   "scripts": {
