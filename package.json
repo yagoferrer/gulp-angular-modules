@@ -1,10 +1,11 @@
 {
   "name": "gulp-angular-modules",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Detects when you are adding a new `Angular.js` module into your working directory to automatically load the file and include the module into your project",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/jasmine-node spec/"
+    "jasmine": "./node_modules/.bin/jasmine-node spec/",
+    "test": "istanbul cover jasmine-node --captureExceptions spec/ && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "repository": {
     "type": "git",
@@ -24,10 +25,13 @@
   },
   "homepage": "https://github.com/yagoferrer/gulp-angular-modules",
   "dependencies": {
+    "coveralls": "^2.11.2",
     "gulp-util": "^3.0.1",
     "through2": "^0.6.1"
   },
   "devDependencies": {
+    "coveralls": "^2.11.2",
+    "istanbul": "^0.3.5",
     "jasmine-node": "^1.14.5",
     "vinyl": "^0.4.3"
   }
