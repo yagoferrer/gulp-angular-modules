@@ -67,8 +67,8 @@ function angularModules(fileName, options)
 
         var result;
 
-        result = "'use strict';\n";
-        result += "(function (ng) {\n";
+        result = "(function (ng) {\n";
+        result += "'use strict';\n";
         result += "ng.module('"+ options.name +"', ['"+ list.join("','") +"']);\n";
         result += "})(angular);";
 
