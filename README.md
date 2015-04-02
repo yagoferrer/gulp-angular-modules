@@ -100,8 +100,8 @@ Check out the example directory: [gulpfile.js](example/gulpfile.js), [index.html
 This is how the generated gulp-angular-modules.js will look like after the `angularModules` runs
 
 ```js
-'use strict';
 (function (ng) {
+'use strict';
 ng.module('gulp-angular-modules', ['module.name','another.module','ui.router']);
 })(angular);
 ```
