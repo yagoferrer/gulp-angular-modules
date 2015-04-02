@@ -24,8 +24,8 @@ describe('when using gulp-angular-modules', function() {
             // make sure it came out the same way it went in
             expect(file.isBuffer()).toBeTruthy();
 
-            var result = "'use strict';\n";
-            result += "(function (ng) {\n";
+            var result = "(function (ng) {\n";
+            result += "'use strict';\n";
             result += "ng.module('gulp-angular-modules', ['module.name','module.name2']);\n";
             result += "})(angular);";
 
