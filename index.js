@@ -48,7 +48,7 @@ function angularModules(fileName, options)
 
         var matches = contents.match(re);
 
-        if (matches) {
+        if (matches && list.indexOf(matches[2]) === -1) {
             list.push(matches[2]);
         }
 
