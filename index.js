@@ -5,6 +5,7 @@ var gutil = require('gulp-util');
 var PluginError = gutil.PluginError;
 var File = gutil.File;
 var path = require("path");
+var stripComments = require("strip-comments");
 
 // consts
 const PLUGIN_NAME = 'gulp-angular-modules';
@@ -43,6 +44,8 @@ function angularModules(fileName, options)
         }
 
         var contents = file.contents.toString();
+
+        var contents = stripComments(contents);
 
         var re = new RegExp(/\.module\((["'])([a-zA-Z0-9_.-]*)/);
 
