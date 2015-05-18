@@ -26,6 +26,7 @@
   "homepage": "https://github.com/yagoferrer/gulp-angular-modules",
   "dependencies": {
     "gulp-util": "^3.0.1",
+    "strip-comments": "^0.3.2",
     "through2": "^0.6.1"
   },
   "devDependencies": {
