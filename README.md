@@ -57,7 +57,7 @@ gulp.task("default", function() {
         modules: ['ui.router'] // Any extra modules that you want to include.
     };
 
-    return gulp.src(["!app/src/templates/*", "app/src/**/*.js"])
+    return gulp.src(["app/src/**/*.js", "!app/src/templates/*"])
         .pipe(angularModules("gulp-angular-modules.js", options)) // Name of the file generated
         .pipe(gulp.dest("app/src/init/")) // Destination folder
 });
