@@ -5,7 +5,7 @@
 [![Dependency Status](https://david-dm.org/yagoferrer/gulp-angular-modules.svg)](https://david-dm.org/yagoferrer/gulp-angular-modules)
 [![Coverage Status](https://coveralls.io/repos/yagoferrer/gulp-angular-modules/badge.svg?branch=master)](https://coveralls.io/r/yagoferrer/gulp-angular-modules?branch=master)
 
-This module helps you to detect when you are adding a new `Angular.js` module into your working directory to automatically load the file and include the module into your project.
+This module helps you to detect when you are adding a new `AngularJS` module into your working directory to automatically load the file and include the module into your project.
 
 ### Inspiration
 I love using [gulp-inject](https://github.com/klei/gulp-inject). It's a great tool that can take care of including your JavaScript and [bower](https://github.com/bower/bower) files into your `index.html` file. 
